@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>sda-front</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.js"></script>
+
+    <script src="js/sda.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+
+  </head>
+
+  <body>
+    <div class="container" ng-app="app-sda">
+      <div class="row" ng-controller="controlle-sda">
+
+        <div class="col-sm-6 panel">
+          <table>
+            <tr>
+              <th class="tittle-name">Name</th>
+              <th class="tittle-userid">userid</th>
+              <th class="tittle-panels">Panels</th>
+            </tr>
+            <tr ng-repeat="client in clients">
+              <td class="table-content" ng-click="selectClient(client)"> {{client.name}}</td>
+              <td class="table-content">{{client.userid}}</td>
+              <td class="table-content">{{client.panels.length}}</td>
+            </tr>
+          </table>
+
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,24 @@
+.panel {
+  padding: 10%;
+  margin: 10%;
+}
+
+th.tittle-name  {
+  color : red;
+  text-align: center;
+  width: 30%
+}
+th.tittle-userid  {
+  color : red;
+  text-align: center;
+  width: 30%
+}
+th.tittle-panels  {
+  color : red;
+  text-align: center;
+  width: 30%
+}
+
+td.table-content {
+  text-align: center;
+}
