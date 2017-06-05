@@ -3,10 +3,8 @@ var router = express.Router();
 
 // ==== MAIN ====
 
-router.get('/:user', function(req, res) {
-  res.render('index.ejs', {
-    user : req.params.user
-  })
+router.get('/', function(req, res) {
+  res.render('index.ejs')
 });
 
 

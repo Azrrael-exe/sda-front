@@ -19,6 +19,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-chart.js/1.1.1/angular-chart.min.js"></script>
+
     <script src="js/sda.js"></script>
     <link rel="stylesheet" href="css/index.css">
 
@@ -28,7 +31,9 @@
     <div class="container" ng-app="app-sda">
       <div class="row" ng-controller="controlle-sda">
 
-        <div class="col-sm-6 panel">
+        <div class="col-md-6 col-md-offset-3 panel">
+
+          <h1 class="table-tittle"> List of Clients </h1>
           <table>
             <tr>
               <th class="tittle-name">Name</th>
@@ -36,13 +41,57 @@
               <th class="tittle-panels">Panels</th>
             </tr>
             <tr ng-repeat="client in clients">
-              <td class="table-content" ng-click="selectClient(client)"> {{client.name}}</td>
-              <td class="table-content">{{client.userid}}</td>
-              <td class="table-content">{{client.panels.length}}</td>
+              <td class="content-name" ng-click="selectClient(client)"> {{client.name}}</td>
+              <td class="content-userid">{{client.userid}}</td>
+              <td class="content-panels">{{client.panels.length}}</td>
             </tr>
           </table>
 
         </div>
+
+        <div class="col-md-6 col-md-offset-3 panel" ng-show='panel_list_show'>
+          <h1 class="table-tittle"> List of Panels for {{selected_client.name}} </h1>
+
+          <table>
+            <tr>
+              <th class="tittle-panelid">Panel ID</th>
+              <th class="tittle-location">Location</th>
+            </tr>
+            <tr ng-repeat="panel in panels">
+              <td class="content-panelid" ng-click="selectPanel(panel)"> {{panel.panelid}}</td>
+              <td class="content-location">{{panel.location}}</td>
+            </tr>
+          </table>
+
+        </div>
+
+        <div class="row" ng-show='read_list_show'>
+          <div class="col-md-4 col-md-offset-2 panel">
+            <table>
+              <tr>
+                <th class="tittle-panelid">Time</th>
+                <th class="tittle-radiation">Radiation</th>
+                <th class="tittle-temperature">Temperature</th>
+                <th class="tittle-network">Network</th>
+                <th class="tittle-panel">Panel</th>
+                <th class="tittle-used">Used</th>
+
+              </tr>
+              <tr ng-repeat="read in reads">
+                <th class="content-time">{{read.time}}</th>
+                <th class="content-radiation">{{read.radiation | number:2 }}</th>
+                <th class="content-temperature">{{read.temperature | number:2 }}</th>
+                <th class="content-network">{{read.current.network | number:2 }}</th>
+                <th class="content-panel">{{read.current.panel | number:2 }}</th>
+                <th class="content-used">{{read.current.used | number:2 }}</th>
+              </tr>
+            </table>
+          </div>
+
+          <div class="col-md-4 panel">
+          </div>
+        </div>
+
 
       </div>
     </div>
