@@ -61,56 +61,47 @@ td.content-location {
 
 th.tittle-time {
   color : #777;
-  text-align: center;
-  width: 20%;
-}
-th.tittle-radiation {
-  color : #777;
-  text-align: center;
-  width: 10%;
+  text-align: left;
+  width: 30%;
 }
 th.tittle-temperature {
   color : #777;
-  text-align: center;
-  width: 10%;
+  text-align: left;
+  width: 20%;
 }
 th.tittle-network {
   color : #777;
   text-align: center;
-  width: 10%;
+  width: 20%;
 }
 th.tittle-panel {
   color : #777;
   text-align: center;
-  width: 10%;
+  width: 20%;
 }
 th.tittle-used {
   color : #777;
   text-align: center;
-  width: 10%;
+  width: 20%;
 }
 
 td.content-time {
   text-align: center;
-  width: 20%;
-}
-td.content-radiation {
-  text-align: center;
-  width: 10%;
+  width: 30%;
 }
 td.content-temperature {
   text-align: center;
-  width: 10%;
+  width: 20%;
 }
 td.content-network {
   text-align: center;
-  width: 10%;
+  width: 20%;
 }
 td.content-panel {
   text-align: center;
-  width: 10%;
+  width: 20%;
 }
 td.content-used {
   text-align: center;
-  width: 10%;
+  width: 20%;
 }
